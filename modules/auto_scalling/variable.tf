@@ -6,4 +6,4 @@ variable "max_size" {}
 variable "min_size" {}
 variable "public_ec2_security_group" {}
 variable "project_name" {}
-variable "target_group_arn" {}
+//variable "target_group_arn" {}

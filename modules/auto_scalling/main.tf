@@ -45,11 +45,11 @@ resource "aws_autoscaling_group" "custom-autoscaling-group" {
   launch_configuration = aws_launch_configuration.custom-launch-config.name
   max_size             = var.max_size
   min_size             = var.min_size
-  target_group_arns    = [var.target_group_arn]
+  // target_group_arns    = [var.target_group_arn]
 
   tag {
     key                 = "Name"
-    value               = "custom-ec2-instance"
+    value               = "web-server"
     propagate_at_launch = true
   }
 }
@@ -60,7 +60,7 @@ resource "aws_autoscaling_policy" "custom-autoscaling-policy-scale-out" {
   name                   = "${var.project_name}-auto-scalling-policy-scale-out"
   scaling_adjustment     = 1
   adjustment_type        = "ChangeInCapacity"
-  cooldown               = 300
+  cooldown               = 60
   autoscaling_group_name = aws_autoscaling_group.custom-autoscaling-group.name
   policy_type            = "SimpleScaling"
 }
@@ -93,7 +93,7 @@ resource "aws_autoscaling_policy" "custom-autoscaling-policy-scale-in" {
   name                   = "${var.project_name}-auto-scalling-policy-scale-in"
   scaling_adjustment     = -1
   adjustment_type        = "ChangeInCapacity"
-  cooldown               = 300
+  cooldown               = 60
   autoscaling_group_name = aws_autoscaling_group.custom-autoscaling-group.name
   policy_type            = "SimpleScaling"
 }
@@ -118,3 +118,4 @@ resource "aws_cloudwatch_metric_alarm" "custom-cloudwatch-alarm-scale-in" {
   alarm_description = "This metric monitors ec2 cpu utilization"
   alarm_actions     = [aws_autoscaling_policy.custom-autoscaling-policy-scale-in.arn]
 }
+

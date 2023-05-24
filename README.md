@@ -48,4 +48,5 @@ terraform apply --auto-approve
     terraform destroy --auto-approve
     
 # After running the code 
-![terrform creating three 3 buckets](https://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/autoscaling_cpu.jpeg?raw=true)
+![terrform creating three 3 buckets](https://github.com/CloudSantosh/aws_autoscaling_terraform
+/image/autoscaling_cpu.jpeg?raw=true)

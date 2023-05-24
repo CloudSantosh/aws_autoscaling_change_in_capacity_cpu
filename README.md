@@ -1,20 +1,20 @@
-# How to manage auto scaling  on the basis of CPU Utilization using terraform module for Dev enviroment
+#How to manage auto scaling  on the basis of CPU Utilization using terraform module for Dev enviroment
 Here the modules concepts of terraform has been used. 
-# Structure of the Project is :
+#Structure of the Project is :
 ![scaling of EC2 on the basis of CPU untilization](https://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/image/project_structure.png?raw=true)
 
 
 
 
-## To initialize and loads resources
+##To initialize and loads resources
 
 terraform init
 
-## To apply infrastructure
+##To apply infrastructure
 
 terraform apply --auto-approve
 
-## To destroy the infrastructure
+##To destroy the infrastructure
 
     terraform destroy --auto-approve
     

@@ -23,4 +23,5 @@ terraform apply --auto-approve
     terraform destroy --auto-approve
     
 # After running the code 
-![scaling of EC2 on the basis of CPU untilization](https://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/image/autoscaling_cpu.jpeg?raw=true)
+<img src="https://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/image/autoscaling_cpu.jpeg" width="100" height="100">
+//![scaling of EC2 on the basis of CPU untilization](https://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/image/autoscaling_cpu.jpeg?raw=true)

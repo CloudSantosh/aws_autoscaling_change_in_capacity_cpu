@@ -37,10 +37,10 @@ resource "aws_launch_configuration" "custom-launch-config" {
 }
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# create auto scalling group
+# create auto scaling group
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 resource "aws_autoscaling_group" "custom-autoscaling-group" {
-  name                 = "${var.project_name}-auto-scalling-group"
+  name                 = "${var.project_name}-auto-scaling-group"
   vpc_zone_identifier  = [var.public_subnet_az1_id, var.public_subnet_az2_id]
   launch_configuration = aws_launch_configuration.custom-launch-config.name
   max_size             = var.max_size
@@ -55,10 +55,10 @@ resource "aws_autoscaling_group" "custom-autoscaling-group" {
   }
 }
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#  create auto scalling policy (scale out)
+#  create auto scaling policy (scale out)
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 resource "aws_autoscaling_policy" "custom-autoscaling-policy-scale-out" {
-  name                   = "${var.project_name}-auto-scalling-policy-scale-out"
+  name                   = "${var.project_name}-auto-scaling-policy-scale-out"
   scaling_adjustment     = 1
   adjustment_type        = "ChangeInCapacity"
   cooldown               = 60
@@ -88,10 +88,10 @@ resource "aws_cloudwatch_metric_alarm" "custom-cloudwatch-alarm-scale-out" {
 }
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# create auto scalling policy (scale in i.e. descalling)
+# create auto scaling policy (scale in i.e. descaling)
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 resource "aws_autoscaling_policy" "custom-autoscaling-policy-scale-in" {
-  name                   = "${var.project_name}-auto-scalling-policy-scale-in"
+  name                   = "${var.project_name}-auto-scaling-policy-scale-in"
   scaling_adjustment     = -1
   adjustment_type        = "ChangeInCapacity"
   cooldown               = 60
@@ -100,7 +100,7 @@ resource "aws_autoscaling_policy" "custom-autoscaling-policy-scale-in" {
 }
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# create cloudwatch alarm (scale in i.e. cloudwatch for descalling)
+# create cloudwatch alarm (scale in i.e. cloudwatch for descaling)
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 resource "aws_cloudwatch_metric_alarm" "custom-cloudwatch-alarm-scale-in" {
   alarm_name          = "${var.project_name}-scale-in-alarm"

@@ -39,7 +39,7 @@ module "keypair_generator" {
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 module "auto_scaling" {
 
-  source                    = "../modules/auto_scalling"
+  source                    = "../modules/auto_scaling"
   project_name              = module.vpc.project_name
   public_subnet_az1_id      = module.vpc.public_subnet_az1_id
   public_subnet_az2_id      = module.vpc.public_subnet_az2_id

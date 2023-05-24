@@ -13,23 +13,23 @@ There are several types of autoscaling:
 
 These autoscaling types can be combined or used independently depending on the specific needs and characteristics of the application or system being scaled. The choice of autoscaling strategy depends on factors such as the nature of the workload, the availability of resources, cost considerations, and the desired performance objectives.
 
-# Here auto scaling  on the basis of CPU Utilization 
+## Here auto scaling  on the basis of CPU Utilization 
 Here the modules concepts of terraform has been used. 
-# Structure of the Project is :
+## Structure of the Project is :
 <img src="https://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/image/project_structure.png" width="400" height="600" alignment="center">
 
 
-## To provision the infrastructure using open source IaC i.e. terraform , the following commands are executed on directory dev_env
+## Provisioning  the infrastructure the following commands are executed on directory dev_env
 
-## To initialize and loads resources
+### To initialize and loads resources
 
     terraform init
 
-## To apply infrastructure
+### To apply infrastructure
 
     terraform apply --auto-approve
 
-## To destroy the infrastructure
+### To destroy the infrastructure
 
     terraform destroy --auto-approve
     

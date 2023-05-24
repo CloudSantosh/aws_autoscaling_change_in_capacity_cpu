@@ -45,6 +45,7 @@ resource "aws_autoscaling_group" "custom-autoscaling-group" {
   launch_configuration = aws_launch_configuration.custom-launch-config.name
   max_size             = var.max_size
   min_size             = var.min_size
+  desired_capacity = var.min.min_size
   // target_group_arns    = [var.target_group_arn]
 
   tag {

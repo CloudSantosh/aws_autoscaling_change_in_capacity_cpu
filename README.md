@@ -1,37 +1,8 @@
 # How to manage auto scaling  on the basis of CPU Utilization using terraform module for Dev enviroment
 Here the modules concepts of terraform has been used. 
 # Structure of the Project is :
+![scaling of EC2 on the basis of CPU untilization](hhttps://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/image/project_structure.png?raw=true)
 
-└── Project Structure
-    └── aws_autoscaling_terraform
-        ├── dev_env
-        │   ├── backend.tf
-        │   ├── main.tf
-        │   ├── provider.tf
-        │   ├── variables.tf
-        │   └── terraform.tfvars
-        ├── image
-        └── modules
-            ├── auto_scaling
-            │   ├── data.tf
-            │   ├── file.sh
-            │   ├── main.tf
-            │   ├── output.tf
-            │   └── variable.tf
-            ├── keypair_generator
-            │   ├── main.tf
-            │   ├── output.tf
-            │   └── variable.tf
-            ├── security_groups
-            │   ├── main.tf
-            │   ├── output.tf
-            │   └── variable.tf
-            ├── vpc
-            │   ├── main.tf
-            │   ├── output.tf
-            │   └── variable.tf
-            ├── .gitignore
-            └── README.md
 
 
 
@@ -48,5 +19,4 @@ terraform apply --auto-approve
     terraform destroy --auto-approve
     
 # After running the code 
-![terrform creating three 3 buckets](https://github.com/CloudSantosh/aws_autoscaling_terraform
-/image/autoscaling_cpu.jpeg?raw=true)
+![scaling of EC2 on the basis of CPU untilization](hhttps://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/image/autoscaling_cpu.jpeg?raw=true)

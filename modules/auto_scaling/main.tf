@@ -42,11 +42,22 @@ resource "aws_launch_configuration" "custom-launch-config" {
 resource "aws_autoscaling_group" "custom-autoscaling-group" {
   name                 = "${var.project_name}-auto-scaling-group"
   vpc_zone_identifier  = [var.public_subnet_az1_id, var.public_subnet_az2_id]
-  launch_configuration = aws_launch_configuration.custom-launch-config.name
   max_size             = var.max_size
   min_size             = var.min_size
-  desired_capacity = var.min.min_size
+  desired_capacity      = var.min_size
+  health_check_grace_period = 100
+  health_check_type = "EC2"
+  force_delete = true
   // target_group_arns    = [var.target_group_arn]
+  launch_configuration = aws_launch_configuration.custom-launch-config.name
+  enabled_metrics = [
+    "GroupMinSize",
+    "GroupMaxSize",
+    "GroupDesiredCapacity",
+    "GroupInServiceInstances",
+    "GroupTotalInstances"
+  ]
+  metrics_granularity = "1Minute"
 
   tag {
     key                 = "Name"
@@ -119,4 +130,3 @@ resource "aws_cloudwatch_metric_alarm" "custom-cloudwatch-alarm-scale-in" {
   alarm_description = "This metric monitors ec2 cpu utilization"
   alarm_actions     = [aws_autoscaling_policy.custom-autoscaling-policy-scale-in.arn]
 }
-

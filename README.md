@@ -1,4 +1,4 @@
-# How to manage auto scaling  on the basis of CPU Utilization using terraform module for Dev enviroment
+# How to manage auto scaling  on the basis of CPU Utilization 
 Here the modules concepts of terraform has been used. 
 # Structure of the Project is :
 <img src="https://github.com/CloudSantosh/aws_autoscaling_terraform/blob/master/image/project_structure.png" width="400" height="600" alignment="center">
